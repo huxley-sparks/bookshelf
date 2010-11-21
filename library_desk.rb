@@ -27,7 +27,7 @@ case choice
 	when 3
 		puts "Please imprima nombre"
 		student = gets
-		current_student = Student.find(:all, :conditions => {:name => student})
+		current_student = Student.where(:name => student).first
 		puts "Please enter book returned"
 		book = gets
 		current_student.books.destroy(:title => book)

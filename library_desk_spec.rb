@@ -1,7 +1,7 @@
 # Testing the library_desk
 require './library_desk'
 
-describe "Student" do
+describe Student do
 
 	it "should have a name" do
 		pending("don't know how to test")
