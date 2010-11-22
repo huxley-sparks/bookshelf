@@ -3,6 +3,8 @@ require './library_logic'
 
 puts "Welcome"
 
+begin 
+
 puts "Here are the following options"
 puts "\t1)New Student"
 puts "\t2)Checkout book"
@@ -30,8 +32,11 @@ case choice
 		current_student = Student.where(:name => student).first
 		puts "Please enter book returned"
 		book = gets
-		current_student.books.destroy(:title => book)
+		current_student.books.destroy_all(:conditions => {:title => book})
+	when 4
+		break
 	else
 		puts "invalid input"
 end
 
+end while true										# Create infinite loop
